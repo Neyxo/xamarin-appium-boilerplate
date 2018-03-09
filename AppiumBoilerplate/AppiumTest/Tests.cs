@@ -2,35 +2,27 @@
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
-using Xamarin.UITest;
-using Xamarin.UITest.Queries;
-using Xamarin.UITest.Android;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Interfaces;
+using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Appium.Android;
 
-namespace AppiumTest
+[TestFixture()]
+public class Tests
 {
-    [TestFixture]
-    public class Tests
+    [SetUp]
+    public void SetUp()
     {
-        AndroidApp app;
+    }
 
-        [SetUp]
-        public void BeforeEachTest()
-        {
-            // TODO: If the iOS app being tested is included in the solution then 
-            // add a reference to the android project from the project containing this file
-            app = ConfigureApp
-                    .Android
-                    // TODO: Update this path to point to your Android app and uncomment the
-                    // code if the app is not included in the solution.
-                    //.ApkFile ("..\..\..\Android\bin\Debug\UITestsAndroid.apk")
-                    .StartApp();
-        }
 
-        [Test]
-        public void AppLaunches()
-        {
-            app.Screenshot("First screen.");
-        }
+    }
+
+    [TearDown]
+    public void End()
+    {
     }
 }
-
