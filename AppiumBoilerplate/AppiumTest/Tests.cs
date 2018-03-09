@@ -42,6 +42,23 @@ public class Tests
         Assert.IsTrue(el2.Text.Equals("First item"));
     }
 
+    [Test()]
+    public void AddTest()
+    {
+        AppiumWebElement el4 = (AppiumWebElement)driver.FindElementByAccessibilityId("Add");
+        el4.Click();
+        AppiumWebElement el5 = (AppiumWebElement)driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.view.ViewGroup");
+        el5.Click();
+        el5.Clear();
+        el5.SendKeys("New item");
+        AppiumWebElement el6 = (AppiumWebElement)driver.FindElementByAccessibilityId("Save");
+        el6.Click();
+        AppiumWebElement el7 = (AppiumWebElement)driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[7]/android.view.ViewGroup/android.view.ViewGroup");
+        el7.Click();
+        AppiumWebElement el8 = (AppiumWebElement)driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");
+        AppiumWebElement el9 = (AppiumWebElement)driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.support.v4.view.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageButton");
+        el9.Click();
+        Assert.IsTrue(el8.Text.Equals("New item"));
     }
 
     [TearDown]
